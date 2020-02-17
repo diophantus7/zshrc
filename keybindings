@@ -1,0 +1,18 @@
+bindkey "^[[3~" delete-char		# del-key
+case "$TERM" in
+	rxvt*)
+		bindkey "^[[7~" beginning-of-line							# pos1-key
+		bindkey "^[[8~" end-of-line									# end-key
+		bindkey '^[[5~'  history-beginning-search-backward		# Page Up
+		bindkey '^[[6~'  history-beginning-search-forward		# Page Down
+	;;
+	*xterm*)
+		bindkey "^[[H" beginning-of-line	# pos1-key
+		bindkey "^[[F" end-of-line			# end-key
+		bindkey '^[[5~'  history-beginning-search-backward		# Page Up
+		bindkey '^[[6~'  history-beginning-search-forward		# Page Down
+	;;
+esac
+
+bindkey "^B"    backward-word
+bindkey "^F"    forward-word
